@@ -1,4 +1,4 @@
-# Gratiskurs – Økt 3 (Ny versjon mars 2026)
+# Gratiskurs – Økt 3
 
 ## Mål for økten
 

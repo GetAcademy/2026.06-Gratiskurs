@@ -1,5 +1,5 @@
 # Økt 4 – Score, restart og helhet i spillet
-**JavaScript Canvas – fullføre Flappy Martin**
+**JavaScript Canvas – fullføre Flappy Bird-inspirert spill**
 
 I denne økten fullfører vi spillet vi har bygget så langt.
 Fokuset er ikke nye konsepter, men å:
@@ -92,7 +92,7 @@ Dette gjør spillet mer meningsfylt uten å legge til mye kompleksitet.
 
 ### 2.1 Hva mener vi med score?
 
-I Flappy Martin kan score være:
+I et Flappy Bird-inspirert spill kan score være:
 - hvor lenge vi overlever
 - hvor mange hindringer vi passerer
 

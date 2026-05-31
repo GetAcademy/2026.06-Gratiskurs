@@ -2,7 +2,7 @@
 
 **Tid:** ca. 1,5 time  
 **Struktur:** tre deler × ca. 25 minutter + pauser  
-**Dato:** tirsdag 10. mars kl. 14:00 – 15:30  
+**Dato:** mandag 1. juni kl. 14:00 – 15:30  
 
 ---
 
@@ -13,15 +13,16 @@
 **Mål:** Bli kjent, forstå hvordan kurset fungerer og få alt installert.
 
 #### Velkommen
-- Presentasjon av lærerne: **Anita**, **Geir**, **Martin** og **Terje** 
+- Presentasjon av teamet: **Terje** underviser, **Kenneth** følger opp kodefaglig og **Anita** er tilgjengelig for veiledning og informasjon om veien videre hos GET Academy.
 - Kort om kurset:
   - 2 uker, 4 økter á 1,5 t.  
   - Alt tas opp → lenker på **Discord** og i **GitHub-repoet**  
-    - Repo: https://github.com/GetAcademy/2026.H1-Gratiskurs
-  - Oppfølging med Martin, Kenneth og Anita
+    - Repo: https://github.com/GetAcademy/2026.06--Gratiskurs
+  - Oppfølging med Kenneth og Anita
 
 #### Praktisk informasjon
 - Det er **lov å ha kamera av**, men hyggelig om noen har det på.  
+- Undervisningen foregår alltid på Google Meet: https://meet.google.com/hyn-tiss-jsh
 - **Discord:** brukes til oppfølging, spørsmål, lenker til opptak og oppgaver.  
 - Opplegg: Se → forstå → spør – **ikke prøv å kode parallelt**.  
 

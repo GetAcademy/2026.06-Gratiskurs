@@ -1,4 +1,4 @@
-# Gratiskurs JavaScript og canvas — Get Academy (Desember 2025)
+# Gratiskurs JavaScript og canvas — GET Academy (Juni 2026)
 <!-- markdownlint-disable MD033 -->
 <a href="https://getacademy.no">
 <img src="https://getacademy.no/hubfs/GET_RGB_logo-01-2.png" alt="GET Logo" width="200" height="auto">
@@ -21,16 +21,17 @@ Vi anbefaler å følge med, stille spørsmål i Discord, og bruke opptakene sene
 
 ## **Praktisk informasjon**
 
+- Undervisningen foregår alltid på Google Meet: https://meet.google.com/hyn-tiss-jsh
 - Opptak av alle økter deles i etterkant — bruk dem når du øver selv.
 - Bli med på Discord for spørsmål og støtte.
 - Ikke gjør nøyaktig det instruktøren gjør parallelt — følg med, prøv å forstå, og still spørsmål underveis.
 
 ## **Økter og oppgaver**
 
-- **Økt 1 — tirsdag 10.03 kl. 14:00–15:30**: Velkommen, installasjon (VS Code + Live Server), gjennomgang av HTML-skjelett med `canvas` og enkel tegning. Oppgaver og steg-for-steg: `Økt 1.md`.
-- **Økt 2 — torsdag 12.03 kl. 14:00–15:30**: Variabler, operatorer, funksjoner med returverdi, enkle animasjoner og grunnleggende fysikk. Oppgaver og øvelser: `Økt 2.md`.
-- **Økt 3 — tirsdag 17.03 kl. 14:00–15:30**: Grundig om `if`-setninger, logiske operatorer, tastastyring, gravitasjon og kollisjon. Start på enkel Flappy Bird. Oppgaver: `Økt 3.md`.
-- **Økt 4 — torsdag 19.03 kl. 14:00–15:30**: Fullføre enkel Flappy Bird, spørsmål og svar, info om tilbud fra GET Academy. Oppgaver: `Økt 4.md`.
+- **Økt 1 — mandag 01.06 kl. 14:00–15:30**: Velkommen, installasjon (VS Code + Live Server), gjennomgang av HTML-skjelett med `canvas` og enkel tegning. Oppgaver og steg-for-steg: `Økt 1.md`.
+- **Økt 2 — torsdag 04.06 kl. 14:00–15:30**: Variabler, operatorer, funksjoner med returverdi, enkle animasjoner og grunnleggende fysikk. Oppgaver og øvelser: `Økt 2.md`.
+- **Økt 3 — tirsdag 09.06 kl. 14:00–15:30**: Grundig om `if`-setninger, logiske operatorer, tastastyring, gravitasjon og kollisjon. Start på enkel Flappy Bird. Oppgaver: `Økt 3.md`.
+- **Økt 4 — fredag 12.06 kl. 14:00–15:30**: Fullføre enkel Flappy Bird, spørsmål og svar, info om tilbud fra GET Academy. Oppgaver: `Økt 4.md`.
 
 Lykke til — still spørsmål i Discord eller direkte til instruktørene når noe er uklart!
 
@@ -38,12 +39,15 @@ Lykke til — still spørsmål i Discord eller direkte til instruktørene når n
 # Intro
 
 - Presentasjon av oss lærerne
-- Oppfølging fra Martin, Kenneth og Anita
+- Terje underviser
+- Kenneth følger opp kodefaglig
+- Anita er tilgjengelig for veiledning og informasjon om veien videre hos GET Academy
 - Velkommen til Discord-serveren vår (frivillig)
-   - Martin eller Kenneth er tilgjengelig i `general` kl. 13 - 14 mandager, onsdager og fredager
-   - De er også tilgjengelige på DM - brukernavnene er `waste1` (Martin) og `im.jst.ken` (Kenneth)
+   - Kenneth er tilgjengelig for kodefaglige spørsmål
+   - Anita er tilgjengelig for veiledning og spørsmål om videre muligheter hos GET Academy
+- Google Meet-lenke til alle undervisningene: https://meet.google.com/hyn-tiss-jsh
 
-Dette repoet inneholder eksempler brukt i GET Academys **gratis kvalifiseringskurs i programmering**, https://github.com/GetAcademy/2026.H1-Gratiskurs
+Dette repoet inneholder eksempler brukt i GET Academys **gratis kvalifiseringskurs i programmering**, https://github.com/GetAcademy/2026.06--Gratiskurs
 
 I løpet av kurset bygger vi et lite spill inspirert av **Flappy Bird** ved hjelp av enkel JavaScript og HTML Canvas.
 
