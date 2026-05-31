@@ -19,6 +19,18 @@ Vi anbefaler å følge med, stille spørsmål i Discord, og bruke opptakene sene
 - **Operatorer og kontrollflyt**: tilordning, aritmetiske operatorer, sammenligning, logiske operatorer, `if`-setninger.
 - **Feilsøking og input**: vanlige feil, tips til debugging, og tastestyring.
 
+## **Pedagogisk rekkefølge**
+
+Kurset er lagt opp slik at vi unngår for mange nye ting samtidig:
+
+1. Tegn enkle former direkte på canvas.
+2. Samle tegnekode i funksjoner.
+3. Bruk `onload` når vi tegner bilder, fordi bilder må være ferdig lastet før `drawImage()` virker stabilt.
+4. Del animasjon i `update()`, `draw()` og `loop()`.
+5. Bygg spillmekanikk med få variabler før vi rydder og refaktorerer.
+
+Hvis noe blir uklart underveis, er det bedre å stoppe på en enkel fungerende versjon enn å rekke alle bonusideene.
+
 ## **Praktisk informasjon**
 
 - Undervisningen foregår alltid på Google Meet: https://meet.google.com/hyn-tiss-jsh

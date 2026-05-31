@@ -9,21 +9,15 @@
         canvas {
             border: 1px solid black;
         }
-
-        img {
-            display: none;
-        }
     </style>
 </head>
 
 <body onload="gameLoop()">
-    <img id="dog" src="https://atlantahumane.org/wp-content/uploads/2025/11/dog-hero.jpg" />
     <canvas id="canvas" width="600" height="600"></canvas>
 
     <script>
         const c = document.getElementById('canvas');
         const ctx = c.getContext('2d');
-        const img = document.getElementById("dog");
 
         let canvasWidth = c.width;
         let canvasHeight = c.height;

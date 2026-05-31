@@ -16,6 +16,12 @@ Rød tråd:
 
 > Vi bygger litt → tester → forbedrer koden underveis (refaktorering)
 
+QA for gjennomføring:
+
+* Prioriter flyt: fugl/firkant som faller, space-hopp, én hindring, enkel kollisjon.
+* Ikke bruk for mye tid på flere hindringer eller score hvis gruppa strever med gravitasjon og input.
+* Bruk gjerne firkanter først. Bilder kan legges på når logikken virker.
+
 ---
 
 # Del 1 – Repetisjon: game loop og enkel bevegelse
@@ -224,6 +230,8 @@ Samme gjelder for bakken hvis vi velger det.
 ---
 
 # Del 10 – Score (hvis tid)
+
+Dette er bonus i økt 3. Hvis tiden blir knapp, flyttes score til økt 4.
 
 ```js
 score++

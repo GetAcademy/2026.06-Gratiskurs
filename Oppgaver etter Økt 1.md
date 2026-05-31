@@ -180,9 +180,11 @@ ctx.fillText("Hei!", 300, 100);
 
 ### Tegn et bilde
 
+Dette er bonus. Bilder må tegnes etter at de er lastet inn.
+
 ```js
 const img = new Image();
-img.src = "bird.png";
+img.src = "eksempler/img/flappyBird.png";
 
 img.onload = function () {
     ctx.drawImage(img, 300, 200, 100, 100);

@@ -7,6 +7,8 @@ Fokuset er ikke nye konsepter, men å:
 - forstå hva *state* faktisk er
 - rydde opp nok til at koden er forståelig
 
+Start med den enkleste fungerende versjonen fra økt 3. Det er bedre å ha én fugl, én hindring og tydelig game over enn mange halvferdige forbedringer.
+
 Økten er delt i tre bolker á ca. 25 minutter, med god tid til spørsmål.
 
 ---
@@ -201,9 +203,13 @@ Når spillet er over:
 ```js
 if (gameOver && enterPressed) {
     restartGame();
-    requestAnimationFrame(drawRectangles);
 }
 ```
+
+Poeng:
+- Vi starter ikke en ny animasjonsloop hvis loopen allerede kjører.
+- Restart handler bare om å sette state tilbake til startverdier.
+- Hvis spillet faktisk stoppet loopen helt, må vi starte `loop()` på nytt, men da må vi passe på at vi ikke starter flere looper samtidig.
 
 ---
 

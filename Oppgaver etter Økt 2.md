@@ -21,6 +21,7 @@ loop()
 I oppgavene under skal du øve på akkurat denne modellen.
 
 Start alltid med å kopiere **forrige demo** eller `canvas_mal.html` til en ny fil.
+Bruk gjerne farger og rektangler først. Vent med bilder til animasjonen virker, så blir det enklere å finne feil.
 
 ---
 

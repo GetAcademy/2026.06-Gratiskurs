@@ -34,7 +34,7 @@
 4. Bruk nettleser (Chrome/Edge eller Firefox).  
 
 #### Demo 1 - Tegne en firkant
-Forklar at dette er malen som alltid kan gjenbruke.
+Forklar at dette er malen vi alltid kan gjenbruke. Start med bare firkant, uten bilder og uten funksjoner.
 
 ```html
 <!doctype html>
@@ -63,6 +63,7 @@ Forklar at dette er malen som alltid kan gjenbruke.
     - størrelse
     - farge
 - Vi ser på hva rekkefølgen av kommandoene har å si
+- Viktig QA-notat: ikke start med bilder her. `drawImage()` kan feile eller tegne ingenting hvis bildet ikke er ferdig lastet. Det løser vi etter at vi har lært funksjoner, med `onload`.
 - Hva kan gå feil? Forhåpentligvis gjør jeg noen feil 😅 - hvis ikke så må vi konstruere noen feil og se hva som skjer da. 
   - Stavefeil  → "is not defined" i konsollen.  
   - Glemte parenteser → funksjonen kjører ikke (`drawBox` vs `drawBox()`).  
@@ -97,15 +98,8 @@ Ulike måter å tegne på (full oversikt på https://www.w3schools.com/jsref/api
     ctx.fillText("Hello World", 10, 50);
     ctx.strokeText("Hello World", 10, 50);
     ```
-- bilde
-    ```html
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Operation_Upshot-Knothole_-_Badger_001.jpg" style="display: none"/>
-    ```
-    ```js
-    const img = document.getElementById('bildeId');
-    ctx.drawImage(img, 10, 10);
-    ```
-    - ev. laste ned bilde + https://www.remove.bg/ + legge i mappen
+
+Vent med bilder til etter funksjoner. Det gir en god grunn til å snakke om at kode noen ganger må vente på at noe er klart.
 
 #### Eksempel
 Vis hvordan vi “snakker til canvas” gjennom `ctx`:
@@ -128,12 +122,13 @@ ctx.fillText("Hei canvas!", 140, 280);
 
 ---
 
-### Del 3 (50–75 min) – Funksjoner og egne kommandoer
+### Del 3 (50–75 min) – Funksjoner, egne kommandoer og bilder
 
 **Mål:**  
 - Forstå hva en funksjon er  
 - Lage egne kommandoer  
 - Introdusere parametre én etter én  
+- Bruke `onload` til å vente med å tegne bilde til bildet er klart
 - Avslutte med en funksjon som tegner et mer komplekst objekt (ansikt)
 - Feilsøking
 
@@ -159,14 +154,6 @@ drawBox();
 - En funksjon er en egen kommando vi lager selv.
 - Hver gang vi kaller den, kjøres den samme “oppskriften”.
 - Dette gjør koden ryddig og forutsigbar.
-
----
-# 🧩 Trinn 1b – onload => kjekt for bilder!
-
-
-
-
----
 
 # 🧩 Trinn 2 – Legge til én parameter: x-posisjon
 
@@ -366,6 +353,57 @@ Tegn munn
 
 Dette er kjernen i **DRY**:  
 > “Don’t Repeat Yourself” – skriv ting *ett sted*, bruk det mange ganger.
+
+---
+
+# 🧩 Trinn 7 – Bilder og `onload`
+
+Nå kan vi forklare bildeproblemet på en ryddig måte.
+
+Først viser vi den naive versjonen:
+
+```html
+<img id="dog" src="../img/dog.png" style="display: none">
+```
+
+```js
+const img = document.getElementById("dog");
+ctx.drawImage(img, 80, 300, 200, 120);
+```
+
+Poeng:
+- Dette kan virke noen ganger.
+- Men noen ganger tegnes ingenting, fordi bildet ikke er ferdig lastet.
+- Koden er ikke "feil", men den kjører for tidlig.
+
+Deretter viser vi løsningen:
+
+```html
+<body onload="drawEverything()">
+  <img id="dog" src="../img/dog.png" style="display: none">
+  <canvas id="canvas" width="800" height="600"></canvas>
+</body>
+```
+
+```js
+function drawEverything() {
+  const img = document.getElementById("dog");
+  ctx.drawImage(img, 80, 300, 200, 120);
+
+  drawFace(400, 250);
+}
+```
+
+Poeng:
+- `onload` betyr: vent til siden og bildet er lastet.
+- Siden `drawEverything()` er en funksjon, kan nettleseren kalle den senere.
+- Dette er en praktisk grunn til at funksjoner er nyttige.
+
+Ikke bruk mye tid på bildebehandling. Hold det til: bilde må ligge i repoet, ha riktig filnavn, og tegnes etter `onload`.
+
+Sti-notat:
+- I demoer som ligger i `eksempler/økt 1`, bruk `../img/dog.png`.
+- Hvis deltakerne jobber i en fil som ligger i repo-roten, bruk `eksempler/img/dog.png`.
 
 ---
 

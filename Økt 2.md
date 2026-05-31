@@ -21,6 +21,14 @@ Når dette skjer mange ganger i sekundet, får vi **animasjon**.
 
 Vi fortsetter på samme måte som i økt 1.
 
+Anbefalt start i denne økten:
+
+* bruk enkle former først
+* få `update()`, `draw()` og `loop()` til å virke
+* legg på bakgrunnsbilde først etter at loopen fungerer
+
+Dette gjør feilsøking enklere. Hvis bildet ikke dukker opp, vet vi at animasjonen allerede virker.
+
 Når vi lager en ny demo:
 
 1. kopierer vi forrige demo
@@ -158,6 +166,8 @@ Når programmet kjører vil rektangelet bevege seg bortover skjermen.
 
 La oss legge til en enkel bakgrunn.
 
+Start med farge, ikke bilde:
+
 ```js
 function drawBackground() {
 
@@ -199,6 +209,41 @@ backgroundX = backgroundX - 2;
 Og tegn bakgrunnen basert på denne variabelen.
 
 Dette gjør at bakgrunnen begynner å **bevege seg**.
+
+---
+
+# Steg 8 – Bytte fra farge til bilde
+
+Når animasjonen virker, kan vi bytte bakgrunnen fra en farge til et bilde.
+
+HTML:
+
+```html
+<body onload="loop()">
+  <img id="background" src="../img/skog2.jpg" style="display: none">
+  <canvas id="canvas" width="800" height="600"></canvas>
+</body>
+```
+
+JavaScript:
+
+```js
+const background = document.getElementById("background");
+```
+
+I `drawBackground()`:
+
+```js
+ctx.drawImage(background, backgroundX, 0, 900, 600);
+ctx.drawImage(background, backgroundX + 900, 0, 900, 600);
+```
+
+Poeng:
+
+* Vi bruker `onload` fordi bildet må være ferdig lastet.
+* Vi tegner bildet to ganger for å få en sømløs scroll.
+* Hvis bildet ikke vises: sjekk filnavn, mappe og at `onload` faktisk starter loopen.
+* I demoer som ligger i `eksempler/økt 2`, er riktig sti `../img/skog2.jpg`.
 
 ---
 
