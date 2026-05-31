@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas mal</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+
+        img {
+            display: none;
+        }
+    </style>
+</head>
+
+<body onload="gameLoop()">
+    <img id="skog" src="../img/skog.jpg" />
+    <canvas id="canvas" width="600" height="600"></canvas>
+
+    <script>
+        const c = document.getElementById('canvas');
+        const ctx = c.getContext('2d');
+        let img;
+
+        let canvasWidth = c.width;
+        let canvasHeight = c.height;
+        let rectX = 50;
+        let rectY = 50;
+        let speedX = -3;
+        let speedY = -2;
+        const rectWidth = 100;
+        const rectHeight = 70;
+
+        function gameLoop() {
+            if (!img) {
+                img = document.getElementById("skog");
+            }
+            update();
+            draw();
+            requestAnimationFrame(gameLoop);
+        }
+
+        function update() {
+            rectX += speedX;
+            rectY += speedY;
+
+            // sprette i venstre vegg?
+            if (rectX <= 0 && speedX < 0) {
+                speedX = -speedX;
+            }
+
+            // sprette i høyre vegg?
+            if (rectX + rectWidth >= canvasWidth && speedX > 0) {
+                speedX = -speedX;
+            }
+
+            // sprette i øvre vegg?
+            if (rectY <= 0 && speedY < 0) {
+                speedY = -speedY;
+            }
+
+            // sprette i nedre vegg?
+            if (rectY + rectHeight >= canvasHeight && speedY > 0) {
+                speedY = -speedY;
+            }
+        }
+
+        function draw() {
+            //ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+            ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
+            const red = 255 * rectX / canvasWidth;
+            const green = 255 * rectY / canvasHeight;
+            drawRect(rectX, rectY, `rgb(${red},${green},127)`);
+        }
+
+
+        function drawRect(x, y, color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, rectWidth, rectHeight);
+        }
+    </script>
+</body>
+
+</html>
