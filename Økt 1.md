@@ -27,7 +27,7 @@
 - Kort om kurset:
   - 2 uker, 4 økter á 1,5 t.  
   - Alt tas opp → lenker på **Discord** og i **GitHub-repoet**  
-    - Repo: https://github.com/GetAcademy/2026.06--Gratiskurs
+    - Repo: https://github.com/GetAcademy/2026.06-Gratiskurs
   - Oppfølging med Kenneth og Anita
 
 #### Praktisk informasjon
