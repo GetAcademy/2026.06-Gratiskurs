@@ -6,7 +6,17 @@
 
 ---
 
-## 🗓️ Disposisjon
+## Plan for dagen
+
+1. Presentasjon av lærerne og litt om GET Academy
+1. Viktige verktøy: VS Code, Nettleser og GitHub-repo
+1. Demo 1: Tegne firkant - inkl. HTML, canvas og enkel JavaScript for å tegne + farger
+1. Hvordan vi tegner linjer, sirkler og tekst + fill vs stroke 
+1. Når vi tegner flere ting, betyr rekkefølgen mye
+1. Funksjoner, først uten, og så med parametre
+1. Bilder og onload
+
+
 
 ### Del 1 (14:00 - ca. 14:25) – Introduksjon og oppstart
 
