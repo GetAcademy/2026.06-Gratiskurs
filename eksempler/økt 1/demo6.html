@@ -19,6 +19,45 @@
             ctx.fill();
         }
 
+        function drawHair(x, y) {
+            ctx.strokeStyle = "#5c4033";
+            ctx.lineWidth = 6;
+            ctx.lineCap = "round";
+
+            // Venstre side
+            ctx.beginPath();
+            ctx.moveTo(x - 45, y - 45);
+            ctx.lineTo(x - 60, y - 80);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(x - 30, y - 55);
+            ctx.lineTo(x - 40, y - 90);
+            ctx.stroke();
+
+            // Midten
+            ctx.beginPath();
+            ctx.moveTo(x - 10, y - 58);
+            ctx.lineTo(x - 15, y - 100);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(x + 10, y - 58);
+            ctx.lineTo(x + 15, y - 95);
+            ctx.stroke();
+
+            // Høyre side
+            ctx.beginPath();
+            ctx.moveTo(x + 30, y - 55);
+            ctx.lineTo(x + 45, y - 88);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(x + 45, y - 45);
+            ctx.lineTo(x + 65, y - 75);
+            ctx.stroke();
+        }
+
         function drawEye(x, y) {
             ctx.beginPath();
             ctx.fillStyle = "blue";
@@ -36,6 +75,7 @@
 
         function drawFace(x, y) {
             drawHead(x, y);
+            drawHair(x, y)
             drawEye(x - 20, y - 15);
             drawEye(x + 20, y - 15);
             drawMouth(x, y);
