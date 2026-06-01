@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<style>
+    canvas {
+        background-color: lightgray;
+    }
+</style>
+
+<body>
+    <canvas id="game" width="800" height="800"></canvas>
+    <script>
+        const c = document.getElementById("game");
+        const ctx = c.getContext("2d");
+
+        //   ctx.fillStyle = "rgb(200,150,100)";
+        //   ctx.fillStyle = "green";
+        //                  x    y    w   h
+        //   ctx.fillRect(250, 250, 100, 60);   // firkant
+
+        ctx.lineWidth = "15";
+        ctx.fillStyle = "red";
+        ctx.fillRect(200, 200, 300, 200);
+        ctx.strokeStyle = "darkred";
+        ctx.strokeRect(200, 200, 300, 200);
+        ctx.fillStyle = "blue";
+        ctx.fillRect(150, 150, 300, 200);
+        ctx.strokeStyle = "darkblue";
+        ctx.strokeRect(150, 150, 300, 200);
+
+        ctx.lineWidth = "5";
+        ctx.beginPath();
+        ctx.moveTo(0, 500);
+        ctx.lineTo(500, 500);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(400, 50, 40, 0, 2 * Math.PI);
+        ctx.stroke();
+
+        ctx.lineWidth = "1";
+        ctx.font = "90px Arial";
+        ctx.fillStyle = "lightblue";
+        ctx.strokeStyle = 'black';
+        ctx.fillText("Hello World", 10, 600);
+        ctx.strokeText("Hello World", 10, 600);
+    </script>
+</body>
+
+</html>

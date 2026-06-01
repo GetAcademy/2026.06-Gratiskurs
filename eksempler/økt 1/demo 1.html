@@ -1,18 +1,29 @@
 <!doctype html>
 <html>
-  <style>
-    canvas { background-color: lightgray; }
-  </style>
-  <body>
+<style>
+    canvas {
+        background-color: lightgray;
+    }
+</style>
+
+<body>
     <canvas id="game" width="800" height="800"></canvas>
     <script>
-      const c = document.getElementById("game");
-      const ctx = c.getContext("2d");
+        const c = document.getElementById("game");
+        const ctx = c.getContext("2d");
 
-    //   ctx.fillStyle = "rgb(200,150,100)";
-      ctx.fillStyle = "green";
-      //             x    y    w   h
-      ctx.fillRect(250, 250, 100, 60);   // firkant
+        //   ctx.fillStyle = "rgb(200,150,100)";
+        //   ctx.fillStyle = "green";
+        //                  x    y    w   h
+        //   ctx.fillRect(250, 250, 100, 60);   // firkant
+
+        ctx.fillStyle = "red";
+        ctx.fillRect(200, 200, 300, 200);
+        ctx.fillStyle = "blue";
+        ctx.fillRect(150, 150, 300, 200);
+        ctx.fillStyle = "green";
+        ctx.fillRect(100, 100, 300, 200);
     </script>
-  </body>
+</body>
+
 </html>
