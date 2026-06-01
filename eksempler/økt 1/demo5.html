@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<style>
+    canvas {
+        background-color: lightgray;
+    }
+
+    img {
+        display: none;
+    }
+</style>
+
+<body onload="drawEverything()">
+    <img id="beachImage" src="../img/beach.jpg" />
+    <canvas id="game" width="800" height="800"></canvas>
+    <script>
+        const c = document.getElementById("game");
+        const ctx = c.getContext("2d");
+
+        function drawFace(x, y) {
+            // Hode
+            ctx.beginPath();
+            ctx.fillStyle = "#ffcc99";
+            ctx.arc(x, y, 60, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Venstre øye
+            ctx.beginPath();
+            ctx.fillStyle = "blue";
+            ctx.arc(x - 20, y - 15, 8, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Høyre øye
+            ctx.beginPath();
+            ctx.arc(x + 20, y - 15, 8, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Munn
+            ctx.beginPath();
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = 4;
+            ctx.arc(x, y + 10, 25, 0, Math.PI);
+            ctx.stroke();
+        }
+
+        function drawEverything() {
+            const beachImage = document.getElementById("beachImage");
+            ctx.drawImage(beachImage, 0, 0, 800, 800);
+            drawFace(150, 150);
+            drawFace(400, 200);
+        }
+    </script>
+</body>
+
+</html>

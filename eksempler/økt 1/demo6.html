@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<style>
+    canvas {
+        background-color: lightgray;
+    }
+</style>
+
+<body>
+    <canvas id="game" width="800" height="800"></canvas>
+    <script>
+        const c = document.getElementById("game");
+        const ctx = c.getContext("2d");
+
+        function drawHead(x, y) {
+            ctx.beginPath();
+            ctx.fillStyle = "#ffcc99";
+            ctx.arc(x, y, 60, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function drawEye(x, y) {
+            ctx.beginPath();
+            ctx.fillStyle = "blue";
+            ctx.arc(x, y, 8, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function drawMouth(x, y) {
+            ctx.beginPath();
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = 4;
+            ctx.arc(x, y + 10, 25, 0, Math.PI);
+            ctx.stroke();
+        }
+
+        function drawFace(x, y) {
+            drawHead(x, y);
+            drawEye(x - 20, y - 15);
+            drawEye(x + 20, y - 15);
+            drawMouth(x, y);
+        }
+
+        drawFace(150, 150);
+        drawFace(400, 200);
+
+        drawFace(150, 150);
+        drawFace(400, 200);
+    </script>
+</body>
+
+</html>

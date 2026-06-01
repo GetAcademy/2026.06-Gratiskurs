@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<style>
+    canvas {
+        background-color: lightgray;
+    }
+</style>
+
+<body>
+    <canvas id="game" width="800" height="800"></canvas>
+    <script>
+        const c = document.getElementById("game");
+        const ctx = c.getContext("2d");
+
+        function drawBox(x, y, color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, 120, 80);
+        }
+
+        // Kall funksjonen flere ganger:
+        drawBox(100, 100, 'green');
+        drawBox(150, 150, 'red');
+        drawBox(200, 200, 'blue');
+        drawBox(50, 50, "rgba(0, 0, 255, 0.4)");
+    </script>
+</body>
+
+</html>
