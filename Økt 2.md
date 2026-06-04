@@ -1,5 +1,21 @@
 # Gratiskurs i programmering – Økt 2
 
+I denne økten skal vi gå fra å tegne til å lage enkle animasjoner. Temaene vi skal gjennom er disse: 
+
+- Variabler 
+- Endre variabler med + og - (aritmetiske operatorer)
+- Enkel animasjon
+- Game loop med update, draw og requestAnimationFrame
+- Logiske verdier og sammenligningsoperatorer (<, >, ==, !=)
+- If-setninger
+- Enkel "fysikk" som
+    - Teleportering
+    - Sprette i veggen
+    - Animert bakgrunn
+    - Gravitasjon og sprette i bakken
+
+---
+
 I forrige økt lærte vi å **tegne ting på skjermen**.
 
 I denne økten skal vi gjøre noe mye mer spennende:
