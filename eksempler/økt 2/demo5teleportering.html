@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<style>
+    canvas {
+        background-color: lightgray;
+    }
+
+    img {
+        display: none;
+    }
+</style>
+
+<body onload="start()">
+    <img id="beachImage" src="../img/beachBackground.jpg" />
+    <canvas id="game" width="800" height="800"></canvas>
+    <script>
+        const c = document.getElementById("game");
+        const ctx = c.getContext("2d");
+        let beachImage;
+
+        let faceX = 500;
+        let faceY = 0;
+        let faceSpeedX = 1;
+        let faceSpeedY = -5;
+        let backgroundX = 0;
+
+        function start() {
+            beachImage = document.getElementById("beachImage");
+            gameLoop();
+        }
+
+        function gameLoop() {
+            update();
+            draw();
+            requestAnimationFrame(gameLoop);
+        }
+
+        function update() {
+            faceX += faceSpeedX;
+            faceY += faceSpeedY;
+            if (faceX > 700 && faceSpeedX > 0) faceX = 0;
+            if (faceX < 0 && faceSpeedX < 0) faceX = 800;
+            if (faceY > 700 && faceSpeedY > 0) faceY = 0;
+            if (faceY < 0 && faceSpeedY < 0) faceY = 800;
+            backgroundX--;
+            if (backgroundX < -1600) {
+                backgroundX = 0;
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, 800, 800);
+            ctx.drawImage(beachImage, backgroundX, 0, 1600, 800);
+            ctx.drawImage(beachImage, backgroundX + 1600, 0, 1600, 800);
+            drawFace(faceX, faceY);
+        }
+
+        function drawFace(leftX, leftY) {
+            // Hode
+            ctx.fillStyle = "#ffcc99";
+            ctx.fillRect(leftX, leftY, 100, 100);
+
+            let x = leftX + 50;
+            let y = leftY + 50;
+
+            // Venstre øye
+            ctx.beginPath();
+            ctx.fillStyle = "blue";
+            ctx.arc(x - 20, y - 15, 8, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Høyre øye
+            ctx.beginPath();
+            ctx.arc(x + 20, y - 15, 8, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Munn
+            ctx.beginPath();
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = 4;
+            ctx.arc(x, y + 10, 25, 0, Math.PI);
+            ctx.stroke();
+        }
+    </script>
+</body>
+
+</html>
