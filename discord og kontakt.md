@@ -7,3 +7,7 @@ Møt Kenneth i Discord i kanalen general på disse tidspunktene.
 
 Undervisning torsdag kl. 14
 - https://meet.google.com/hyn-tiss-jsh
+
+
+kennethj@getacademy.no
+terje@getacademy.no
