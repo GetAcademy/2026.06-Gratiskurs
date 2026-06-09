@@ -14,6 +14,7 @@
     <img id="beachImage" src="../img/beachBackground.jpg" />
     <canvas id="game" width="800" height="800"></canvas>
     <script>
+        document.addEventListener("keydown", handleKeyDown)
         const c = document.getElementById("game");
         const ctx = c.getContext("2d");
         let beachImage;
@@ -23,8 +24,13 @@
         let faceY = 300;
         let faceSpeedX = 0;
         let faceSpeedY = 0;
-        let backgroundX = 0;
+        let backgroundX = 0; 
 
+        function handleKeyDown(e) {
+            if (e.code == "Space") {
+                faceSpeedY = -20;
+            }
+        }
         function start() {
             beachImage = document.getElementById("beachImage");
             gameLoop();
@@ -48,6 +54,7 @@
             faceX += faceSpeedX;
             faceY += faceSpeedY;
 
+            // Sjekk om fuglen har truffet bakken
             let birdBottomY = faceY + 100;
             let screenBottomY = 800;
 
