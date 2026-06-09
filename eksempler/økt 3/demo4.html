@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<style>
+    canvas {
+        background-color: lightgray;
+    }
+
+    img {
+        display: none;
+    }
+</style>
+
+<body onload="start()">
+    <img id="beachImage" src="../img/beachBackground.jpg" />
+    <canvas id="game" width="800" height="800"></canvas>
+    <script>
+        document.addEventListener("keydown", handleKeyDown)
+        const c = document.getElementById("game");
+        const ctx = c.getContext("2d");
+        let beachImage;
+        let isRunning = true;
+
+        let birdX = 300;
+        let birdY = 300;
+        let birdWidth = 100;
+        let birdHeight = 100;
+        let birdSpeedX = 0;
+        let birdSpeedY = 0;
+        let pipeX = 800;
+        let pipeWidth = 150;
+        let pipeHeight = 200;
+        let backgroundX = 0;
+
+        function handleKeyDown(e) {
+            if (e.code == "Space") {
+                birdSpeedY = -20;
+            }
+        }
+        function start() {
+            beachImage = document.getElementById("beachImage");
+            gameLoop();
+        }
+
+        function gameLoop() {
+            update();
+            draw();
+            if (isRunning) {
+                requestAnimationFrame(gameLoop);
+            }
+        }
+
+        function update() {
+            updateBirdPosition();
+            updateBirdSpeed();
+            updateBackgroundPosition();
+            updatePipePosition();
+            checkCollision(0, pipeHeight);
+            checkCollision(800 - pipeHeight, 800);
+        }
+
+        function checkCollision(pipeTopY, pipeBottomY) {
+            let birdLeftX = birdX;
+            let birdRightX = birdX + birdWidth;
+            let birdTopY = birdY;
+            let birdBottomY = birdY + birdHeight;
+
+            let pipeLeftX = pipeX;
+            let pipeRightX = pipeX + pipeWidth;
+
+            let birdIsLeft = birdRightX < pipeLeftX;
+            let birdIsRight = birdLeftX > pipeRightX;
+            let birdIsBelow = birdTopY > pipeBottomY;
+            let birdIsAbove = birdBottomY < pipeTopY;
+            let birdIsOutsidePipe = birdIsAbove || birdIsBelow || birdIsLeft || birdIsRight;
+
+            let isCollision = !birdIsOutsidePipe;
+
+            if (isCollision) {
+                isRunning = false;
+            }
+        }
+
+        function updatePipePosition() {
+            pipeX -= 5;
+            if (pipeX < -pipeWidth) {
+                pipeX = 800;
+            }
+        }
+
+        function updateBirdPosition() {
+            birdX += birdSpeedX;
+            birdY += birdSpeedY;
+
+            // Sjekk om fuglen har truffet bakken
+            let birdBottomY = birdY + birdHeight;
+            let screenBottomY = 800;
+
+            if (birdBottomY >= screenBottomY) {
+                isRunning = false;
+                birdY = screenBottomY - birdHeight;
+            }
+        }
+
+        function updateBirdSpeed() {
+            if (birdY > 700) {
+                birdSpeedY = -birdSpeedY;
+            } else {
+                birdSpeedY++;
+            }
+        }
+
+        function updateBackgroundPosition() {
+            backgroundX--;
+            if (backgroundX < -1600) {
+                backgroundX = 0;
+            }
+        }
+
+        function draw() {
+            clearScreen();
+            drawBackground();
+            drawPipe(0);
+            drawPipe(800 - pipeHeight);
+            drawBird();
+        }
+
+        function drawBackground() {
+            ctx.drawImage(beachImage, backgroundX, 0, 1600, 800);
+            ctx.drawImage(beachImage, backgroundX + 1600, 0, 1600, 800);
+        }
+
+        function clearScreen() {
+            ctx.clearRect(0, 0, 800, 800);
+        }
+
+        function drawPipe(y) {
+            ctx.fillStyle = "rgb(32, 192, 0)";
+            ctx.fillRect(pipeX, y, pipeWidth, pipeHeight);
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = "rgb(0, 64, 0)";
+            ctx.strokeRect(pipeX, y, pipeWidth, pipeHeight);
+        }
+
+        function drawBird() {
+            // Hode
+            ctx.fillStyle = "#ffcc99";
+            ctx.fillRect(birdX, birdY, birdWidth, birdHeight);
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#663300";
+            ctx.strokeRect(birdX, birdY, birdWidth, birdHeight);
+
+            let x = birdX + 50;
+            let y = birdY + 50;
+
+            // Venstre øye
+            ctx.beginPath();
+            ctx.fillStyle = "blue";
+            ctx.arc(x - 20, y - 15, 8, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Høyre øye
+            ctx.beginPath();
+            ctx.arc(x + 20, y - 15, 8, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Munn
+            ctx.beginPath();
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = 4;
+            ctx.arc(x, y + 10, 25, 0, Math.PI);
+            ctx.stroke();
+        }
+    </script>
+</body>
+
+</html>
