@@ -7,5 +7,6 @@ https://photos.app.goo.gl/dz7KhuDhqw5ERVSp6
 https://photos.app.goo.gl/hzyKWxdPmhnh5qjk8
 
 ## Tirsdag 9.6 - økt 3
+https://photos.app.goo.gl/EqL3PM7FxJXaNqph8
 
 ## Fredag 12.6 - økt 4

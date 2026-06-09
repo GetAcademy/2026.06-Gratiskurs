@@ -24,6 +24,8 @@
         let faceY = 300;
         let faceSpeedX = 0;
         let faceSpeedY = 0;
+        let pipeX = 800;
+        let pipeWidth = 150;
         let backgroundX = 0; 
 
         function handleKeyDown(e) {
@@ -48,6 +50,14 @@
             updateBirdPosition();
             updateBirdSpeed();
             updateBackgroundPosition();
+            updatePipePosition();
+        }
+
+        function updatePipePosition() {
+            pipeX -= 5;
+            if (pipeX < -pipeWidth) {
+                pipeX = 800;
+            }
         }
 
         function updateBirdPosition() {
@@ -97,10 +107,10 @@
 
         function drawPipe() {
             ctx.fillStyle = "rgb(32, 192, 0)";
-            ctx.fillRect(450, 0, 150, 300);
+            ctx.fillRect(pipeX, 0, pipeWidth, 300);
             ctx.lineWidth = 1;
             ctx.strokeStyle = "rgb(0, 64, 0)";
-            ctx.strokeRect(450, 0, 150, 300);
+            ctx.strokeRect(pipeX, 0, pipeWidth, 300);
             // ctx.fillRect(600, 500, 50, 300);
         }
 
