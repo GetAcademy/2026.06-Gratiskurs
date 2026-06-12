@@ -10,3 +10,4 @@ https://photos.app.goo.gl/hzyKWxdPmhnh5qjk8
 https://photos.app.goo.gl/EqL3PM7FxJXaNqph8
 
 ## Fredag 12.6 - økt 4
+https://photos.app.goo.gl/xcrf58EVoee5oRp67
