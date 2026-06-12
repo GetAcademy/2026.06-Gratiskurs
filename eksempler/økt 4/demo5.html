@@ -30,6 +30,7 @@
         let score;
         let startTime;
         let frameCount;
+        let pipeSpeed;
 
         // disse endrer ikke verdi
         let birdSpeedX = 0;
@@ -37,6 +38,7 @@
         let birdHeight = 100;
         let pipeWidth = 150;
         let pipeHeight = 200;
+        let framesBeforeIncreasePipeSpeed = 300;
 
         function handleKeyDown(e) {
             if (e.code == "Space") {
@@ -59,11 +61,15 @@
             score = 0;
             startTime = new Date().getTime();
             frameCount = 0;
+            pipeSpeed = 4;
             gameLoop();
         }
 
         function gameLoop() {
             frameCount++;
+            if (frameCount % framesBeforeIncreasePipeSpeed == 0) {
+                pipeSpeed++;
+            }
             update();
             draw();
             if (isRunning) {
@@ -104,7 +110,7 @@
         }
 
         function updatePipePosition() {
-            pipeX -= 5;
+            pipeX -= pipeSpeed;
             if (pipeX < -pipeWidth) {
                 pipeX = 800;
             }
@@ -147,7 +153,8 @@
             drawBird();
             drawText('Score: ' + Math.floor(score), 60, 10, 55);
             if (isRunning) {
-                drawFps();
+                drawFps();                
+                drawText(pipeSpeed, 60, 400, 55);
             } else {
                 if (hasPlayed) {
                     drawText('Game over', 140, 50, 400);
