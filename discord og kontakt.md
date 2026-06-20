@@ -4,6 +4,7 @@ Møt Kenneth i Discord i kanalen general på disse tidspunktene.
 
 - Onsdag 3.6 kl. 13 - 14 
 - Fredag 5.6 kl. 13 - 14
+- Fredag 12.5 kl. 13
 
 Undervisning torsdag kl. 14
 - https://meet.google.com/hyn-tiss-jsh
